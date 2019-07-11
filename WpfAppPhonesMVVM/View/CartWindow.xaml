@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfAppPhonesMVVM.View.CartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppPhonesMVVM.View"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        mc:Ignorable="d"
+        Title="CartWindow" Height="300" Width="450" >
+    <StackPanel>
+        <ListBox Name="CartListBox" ItemsSource="{Binding Phones}"
+                 FontWeight="Bold" FontSize="16" 
+                 SelectedItem="{Binding SelectedCartPhone}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="X" Height="20" VerticalAlignment="Top" Margin="3" 
+                                Command="{Binding DataContext.DeletePhone, 
+                                RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                CommandParameter="{Binding SelectedCartPhone}"/>
+                        <Image Height="100" Source="{Binding CPhone.Image}" Margin="3"/>
+                        <StackPanel>
+                            <TextBlock Text="{Binding CPhone.Name}" Foreground="Navy" Margin="3" FontSize="12" TextWrapping="Wrap" />                     
+                            <Border BorderBrush="Gold" BorderThickness="2" CornerRadius="3" Width="80" HorizontalAlignment="Left">
+                                <TextBlock Text="{Binding CPhone.Price, StringFormat={}{0} грн}" Background="Gold" Padding="5"  Width="80" 
+                                           Foreground="Black" VerticalAlignment="Center" FontSize="14"  />                             
+                            </Border>
+                        </StackPanel>
+                        <TextBlock Text="{Binding Count}" Foreground="Navy" Margin="3" FontSize="12"/>
+                        <TextBlock Text="{Binding TotalCost}" Foreground="Navy" Margin="3" FontSize="12"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>     
+    </StackPanel>
+</Window>
