@@ -8,12 +8,12 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
         xmlns:utils="clr-namespace:WpfAppPhonesMVVM.Utils"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="525">    
+        Title="WpfAppPhonesMVVM" Height="600" Width="525">    
     
     <Window.Resources>
         <converters:PriceConverter x:Key="PriceConverter"/>
-        <converters:IsEditConverter x:Key="isEditConverter"/>
-        <converters:BorderConverter x:Key="borderConverter"/>
+        <converters:IsEditConverter x:Key="IsEditConverter"/>
+        <converters:BorderConverter x:Key="BorderConverter"/>
         <Style x:Key="StyleBuy" TargetType="{x:Type StackPanel}">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -49,15 +49,15 @@
                             </i:Interaction.Triggers>
                         </Image>
                         <TextBox Text="{Binding Sale, UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Margin="2" TextWrapping="Wrap" 
-                                 IsReadOnly="{Binding IsEdit, Converter={StaticResource isEditConverter}}"
-                                 BorderThickness="{Binding IsEdit, Converter={StaticResource borderConverter}}"/>
+                                 IsReadOnly="{Binding IsEdit, Converter={StaticResource IsEditConverter}}"
+                                 BorderThickness="{Binding IsEdit, Converter={StaticResource BorderConverter}}"/>
                         <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Foreground="Navy" Margin="2" TextWrapping="Wrap"
-                                 IsReadOnly="{Binding IsEdit, Converter={StaticResource isEditConverter}}"
-                                 BorderThickness="{Binding IsEdit, Converter={StaticResource borderConverter}}"/>
+                                 IsReadOnly="{Binding IsEdit, Converter={StaticResource IsEditConverter}}"
+                                 BorderThickness="{Binding IsEdit, Converter={StaticResource BorderConverter}}"/>
                         <TextBox Text="{Binding OldPrice, Converter={StaticResource PriceConverter}, UpdateSourceTrigger=PropertyChanged}" 
                                  Foreground="Silver" FontWeight="Bold" FontSize="16"
-                                 IsReadOnly="{Binding IsEdit, Converter={StaticResource isEditConverter}}"
-                                 BorderThickness="{Binding IsEdit, Converter={StaticResource borderConverter}}">
+                                 IsReadOnly="{Binding IsEdit, Converter={StaticResource IsEditConverter}}"
+                                 BorderThickness="{Binding IsEdit, Converter={StaticResource BorderConverter}}">
                             <TextBox.TextDecorations> 
                                 <TextDecoration Location="Strikethrough"> <!--перечёркивание-->
                                     <TextDecoration.Pen>
@@ -70,8 +70,8 @@
                         <StackPanel Orientation="Horizontal"><!--StringFormat={}{0} грн} вариант формирования цены-->
                             <TextBox Text="{Binding Price, Converter={StaticResource PriceConverter}, UpdateSourceTrigger=PropertyChanged}" Margin="2,2,8,2" 
                                      FontWeight="Bold" FontSize="16" VerticalAlignment="Center"
-                                     IsReadOnly="{Binding IsEdit, Converter={StaticResource isEditConverter}}"
-                                     BorderThickness="{Binding IsEdit, Converter={StaticResource borderConverter}}"/>
+                                     IsReadOnly="{Binding IsEdit, Converter={StaticResource IsEditConverter}}"
+                                     BorderThickness="{Binding IsEdit, Converter={StaticResource BorderConverter}}"/>
                             <Border BorderBrush="Green" BorderThickness="2" CornerRadius="3">
                                 <StackPanel Orientation="Horizontal" Background="Green" Style="{StaticResource StyleBuy}"> 
                                    
@@ -93,8 +93,8 @@
                         </StackPanel>
 
                         <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" Margin="2" TextWrapping="Wrap" 
-                                 IsReadOnly="{Binding IsEdit, Converter={StaticResource isEditConverter}}"
-                                 BorderThickness="{Binding IsEdit, Converter={StaticResource borderConverter}}"/>                       
+                                 IsReadOnly="{Binding IsEdit, Converter={StaticResource IsEditConverter}}"
+                                 BorderThickness="{Binding IsEdit, Converter={StaticResource BorderConverter}}"/>                       
 
                     </StackPanel>
                 </DataTemplate>

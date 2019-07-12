@@ -9,8 +9,8 @@ namespace WpfAppPhonesMVVM.Utils
 {
     public class CustomCommand : ICommand
     {
-        Action<object> _execute; // обобщенный делегат, соответствующий сигнатуре метода: void Method(object parameter);
-        Predicate<object> _canExecute; // обобщенный делегат, соответствующий сигнатуре метода bool Method(object parameter);
+        readonly Action<object> _execute; // обобщенный делегат, соответствующий сигнатуре метода: void Method(object parameter);
+        readonly Predicate<object> _canExecute; // обобщенный делегат, соответствующий сигнатуре метода bool Method(object parameter);
 
         public CustomCommand(Action<object> execute)
             : this(execute, null) // обращаемся к имеющемуся в классе конструктору 

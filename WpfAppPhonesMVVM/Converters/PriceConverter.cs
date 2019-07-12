@@ -18,7 +18,7 @@ namespace WpfAppPhonesMVVM.Converters
                 {
                     return null;
                 }     
-                return string.Format("{0} грн", value);
+                return $"{value} грн";
             }
             return null;
         }

@@ -25,7 +25,7 @@ namespace WpfAppPhonesMVVM.ViewModel
         private CustomCommand _addToCart;
         private CustomCommand _showCart;
         private Phone _selectedPhone;
-        private CartWindow _cartWindow = new CartWindow();
+        private readonly CartWindow _cartWindow = new CartWindow();
 
         private void OnPropertyChanged(string propertyName)
         {
@@ -231,44 +231,42 @@ namespace WpfAppPhonesMVVM.ViewModel
                 }
                 catch (Exception ex)
                 {
-                Phones = new ObservableCollection<Phone>
-                {
-                    new Phone
+                    Phones = new ObservableCollection<Phone>
                     {
-                        Name = "Samsung Galaxy A5 2017 Duos SM-A520 Black",
-                        Description = "Экран (5.2\", Super AMOLED, 1920x1080)/ Samsung Exynos 7880 (1.9 ГГц)/ основная камера: 16 Мп, фронтальная камера: 16 Мп/ RAM 3 ГБ/ 32 ГБ встроенной памяти + microSD/SDHC (до 256 ГБ)/ 3G/ LTE/ GPS/ ГЛОНАСС/ поддержка 2х SIM-карт (Nano-SIM)/ Android 6.0 (Marshmallow)/ 3000 мА*ч",
-                        Sale = "Акция! Суперцена на Samsung Galaxy A5/A7 и оплата частями* на 10 месяцев!",
-                        Price = 6999,
-                        OldPrice = 7499,
-                        Image = "/Images/samsung_sm_a520.jpg"
-                    },
-                    new Phone
-                    {
-                        Name = "Samsung Galaxy A5 2017 Duos SM-A520 Black",
-                        Description = "Экран (5.7\", Super AMOLED, 1920x1080)/ Samsung Exynos 7880 (1.9 ГГц)/ основная камера: 16 Мп, фронтальная камера: 16 Мп/ RAM 3 ГБ/ 32 ГБ встроенной памяти + microSD/SDHC (до 256 ГБ)/ 3G/ LTE/ GPS/ ГЛОНАСС/ поддержка 2х SIM-карт (Nano-SIM)/ Android 6.0 (Marshmallow)/ 3600 мА*ч",
-                        Sale = "Акция! Суперцена на Samsung Galaxy A5/A7 и оплата частями* на 10 месяцев!",
-                        Price = 7999,
-                        OldPrice = 8499,
-                        Image = "/Images/samsung_sm_a720.jpg"
-                    },
-                    new Phone
-                    {
-                        Name = "Samsung Galaxy J3 2016 J320H/DS Black + чехол + защитное стекло в подарок!",
-                        Description = "Экран (5\", Super AMOLED, 1280x720)/ четырёхъядерный (1.3 ГГц)/ основная камера: 8 Мп, фронтальная камера: 5 Мп/ RAM 1.5 ГБ/ 8 ГБ встроенной памяти + microSD (до 128 ГБ)/ 3G/ GPS/ поддержка 2х SIM-карт (Micro-SIM + Micro-SIM)/ Android 5.1 Lollipop / 2600 мА*ч",
-                        Sale = null,
-                        Price = 2699,
-                        OldPrice = null,
-                        Image = "/Images/samsung_sm_j320.jpg"
-                    }
-                };
+                        new Phone
+                        {
+                            Name = "Samsung Galaxy A5 2017 Duos SM-A520 Black",
+                            Description = "Экран (5.2\", Super AMOLED, 1920x1080)/ Samsung Exynos 7880 (1.9 ГГц)/ основная камера: 16 Мп, фронтальная камера: 16 Мп/ RAM 3 ГБ/ 32 ГБ встроенной памяти + microSD/SDHC (до 256 ГБ)/ 3G/ LTE/ GPS/ ГЛОНАСС/ поддержка 2х SIM-карт (Nano-SIM)/ Android 6.0 (Marshmallow)/ 3000 мА*ч",
+                            Sale = "Акция! Суперцена на Samsung Galaxy A5/A7 и оплата частями* на 10 месяцев!",
+                            Price = 6999,
+                            OldPrice = 7499,
+                            Image = "/Images/samsung_sm_a520.jpg"
+                        },
+                        new Phone
+                        {
+                            Name = "Samsung Galaxy A5 2017 Duos SM-A520 Black",
+                            Description = "Экран (5.7\", Super AMOLED, 1920x1080)/ Samsung Exynos 7880 (1.9 ГГц)/ основная камера: 16 Мп, фронтальная камера: 16 Мп/ RAM 3 ГБ/ 32 ГБ встроенной памяти + microSD/SDHC (до 256 ГБ)/ 3G/ LTE/ GPS/ ГЛОНАСС/ поддержка 2х SIM-карт (Nano-SIM)/ Android 6.0 (Marshmallow)/ 3600 мА*ч",
+                            Sale = "Акция! Суперцена на Samsung Galaxy A5/A7 и оплата частями* на 10 месяцев!",
+                            Price = 7999,
+                            OldPrice = 8499,
+                            Image = "/Images/samsung_sm_a720.jpg"
+                        },
+                        new Phone
+                        {
+                            Name = "Samsung Galaxy J3 2016 J320H/DS Black + чехол + защитное стекло в подарок!",
+                            Description = "Экран (5\", Super AMOLED, 1280x720)/ четырёхъядерный (1.3 ГГц)/ основная камера: 8 Мп, фронтальная камера: 5 Мп/ RAM 1.5 ГБ/ 8 ГБ встроенной памяти + microSD (до 128 ГБ)/ 3G/ GPS/ поддержка 2х SIM-карт (Micro-SIM + Micro-SIM)/ Android 5.1 Lollipop / 2600 мА*ч",
+                            Sale = null,
+                            Price = 2699,
+                            OldPrice = null,
+                            Image = "/Images/samsung_sm_j320.jpg"
+                        }
+                    };
             }
 
             if (Phones.Count > 0)
             {
                 SelectedPhone = Phones[0];
             }
-
-          
         }
     }
 }
